@@ -1,0 +1,8 @@
+# Ignore temporary build artifacts
+__pycache__/
+*.pyc
+*.log
+*.tmp
+.DS_Store
+# Binary assets generated during simulation
+logs/

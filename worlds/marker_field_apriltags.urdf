@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+<robot name="marker_field_apriltags">
+  <!-- Base link -->
+  <link name="world">
+    <inertial>
+      <mass value="0.001"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+    </inertial>
+  </link>
+
+  <!-- Floor markers -->
+  <link name="floor_center_tag0">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="tag_quad.obj" scale="0.6 0.6 0.01"/></geometry>
+      <material name="tag0">
+        <color rgba="1 1 1 1"/>
+        <texture filename="../textures/tags_36h11/tag_0.png"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="world_to_floor_center_tag0" type="fixed">
+    <parent link="world"/><child link="floor_center_tag0"/><origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <link name="floor_gray_tag1">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="tag_quad.obj" scale="0.6 0.6 0.01"/></geometry>
+      <material name="tag1">
+        <color rgba="1 1 1 1"/>
+        <texture filename="../textures/tags_36h11/tag_1.png"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="world_to_floor_gray_tag1" type="fixed">
+    <parent link="world"/><child link="floor_gray_tag1"/><origin xyz="1.5 1.0 0" rpy="0 0 0"/>
+  </joint>
+
+  <link name="floor_red_tag2">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="tag_quad.obj" scale="0.6 0.6 0.01"/></geometry>
+      <material name="tag2">
+        <color rgba="1 1 1 1"/>
+        <texture filename="../textures/tags_36h11/tag_2.png"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="world_to_floor_red_tag2" type="fixed">
+    <parent link="world"/><child link="floor_red_tag2"/><origin xyz="-1.5 -1.0 0" rpy="0 0 0"/>
+  </joint>
+
+  <link name="floor_purple_tag3">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="tag_quad.obj" scale="0.6 0.6 0.01"/></geometry>
+      <material name="tag3">
+        <color rgba="1 1 1 1"/>
+        <texture filename="../textures/tags_36h11/tag_3.png"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="world_to_floor_purple_tag3" type="fixed">
+    <parent link="world"/><child link="floor_purple_tag3"/><origin xyz="1.5 -1.5 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Wall markers -->
+  <link name="wall_x_tag4">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <geometry><mesh filename="tag_quad.obj" scale="0.6 0.6 0.01"/></geometry>
+      <material name="tag4">
+        <color rgba="1 1 1 1"/>
+        <texture filename="../textures/tags_36h11/tag_4.png"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="world_to_wall_x_tag4" type="fixed">
+    <parent link="world"/><child link="wall_x_tag4"/><origin xyz="2.5 0 0.2" rpy="0 0 0"/>
+  </joint>
+
+  <link name="wall_neg_x_tag5">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <geometry><mesh filename="tag_quad.obj" scale="0.6 0.6 0.01"/></geometry>
+      <material name="tag5">
+        <color rgba="1 1 1 1"/>
+        <texture filename="../textures/tags_36h11/tag_5.png"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="world_to_wall_neg_x_tag5" type="fixed">
+    <parent link="world"/><child link="wall_neg_x_tag5"/><origin xyz="-2.5 0 0.2" rpy="0 0 0"/>
+  </joint>
+
+  <link name="wall_pos_y_tag6">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 1.5708 0"/>
+      <geometry><mesh filename="tag_quad.obj" scale="0.6 0.6 0.01"/></geometry>
+      <material name="tag6">
+        <color rgba="1 1 1 1"/>
+        <texture filename="../textures/tags_36h11/tag_6.png"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="world_to_wall_pos_y_tag6" type="fixed">
+    <parent link="world"/><child link="wall_pos_y_tag6"/><origin xyz="0 2.5 0.2" rpy="0 0 0"/>
+  </joint>
+
+  <link name="wall_neg_y_tag7">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 1.5708 0"/>
+      <geometry><mesh filename="tag_quad.obj" scale="0.6 0.6 0.01"/></geometry>
+      <material name="tag7">
+        <color rgba="1 1 1 1"/>
+        <texture filename="../textures/tags_36h11/tag_7.png"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="world_to_wall_neg_y_tag7" type="fixed">
+    <parent link="world"/><child link="wall_neg_y_tag7"/><origin xyz="0 -2.5 0.2" rpy="0 0 0"/>
+  </joint>
+
+  <link name="wall_pos_x_high_tag8">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <geometry><mesh filename="tag_quad.obj" scale="0.6 0.6 0.01"/></geometry>
+      <material name="tag8">
+        <color rgba="1 1 1 1"/>
+        <texture filename="../textures/tags_36h11/tag_8.png"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="world_to_wall_pos_x_high_tag8" type="fixed">
+    <parent link="world"/><child link="wall_pos_x_high_tag8"/><origin xyz="2.5 1.5 1.0" rpy="0 0 0"/>
+  </joint>
+
+  <link name="wall_neg_x_high_tag9">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <geometry><mesh filename="tag_quad.obj" scale="0.6 0.6 0.01"/></geometry>
+      <material name="tag9">
+        <color rgba="1 1 1 1"/>
+        <texture filename="../textures/tags_36h11/tag_9.png"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="world_to_wall_neg_x_high_tag9" type="fixed">
+    <parent link="world"/><child link="wall_neg_x_high_tag9"/><origin xyz="-2.5 -1.5 1.0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Ceiling markers -->
+  <link name="ceiling_tag10">
+    <visual>
+      <origin xyz="0 0 0" rpy="3.14159 0 0"/>
+      <geometry><mesh filename="tag_quad.obj" scale="0.6 0.6 0.01"/></geometry>
+      <material name="tag10">
+        <color rgba="1 1 1 1"/>
+        <texture filename="../textures/tags_36h11/tag_10.png"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="world_to_ceiling_tag10" type="fixed">
+    <parent link="world"/><child link="ceiling_tag10"/><origin xyz="0 0 2.5" rpy="0 0 0"/>
+  </joint>
+
+  <link name="ceiling_tag11">
+    <visual>
+      <origin xyz="0 0 0" rpy="3.14159 0 0"/>
+      <geometry><mesh filename="tag_quad.obj" scale="0.6 0.6 0.01"/></geometry>
+      <material name="tag11">
+        <color rgba="1 1 1 1"/>
+        <texture filename="../textures/tags_36h11/tag_11.png"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="world_to_ceiling_tag11" type="fixed">
+    <parent link="world"/><child link="ceiling_tag11"/><origin xyz="1.5 1.5 2.5" rpy="0 0 0"/>
+  </joint>
+</robot>

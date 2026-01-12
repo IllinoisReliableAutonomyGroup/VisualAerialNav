@@ -1,0 +1,225 @@
+<?xml version="1.0"?>
+<robot name="marker_field">
+  <!-- Base link to anchor all markers -->
+  <link name="world">
+    <inertial>
+      <mass value="0.001"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+    </inertial>
+  </link>
+
+  <!-- Floor marker at origin -->
+  <link name="floor_center_white">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.6 0.6 0.01"/>
+      </geometry>
+      <material name="white">
+        <color rgba="0.9 0.9 0.9 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="world_to_marker_floor_center" type="fixed">
+    <parent link="world"/>
+    <child link="floor_center_white"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Floor marker offset -->
+  <link name="floor_gray">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.6 0.6 0.01"/>
+      </geometry>
+      <material name="gray">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="world_to_floor_gray" type="fixed">
+    <parent link="world"/>
+    <child link="floor_gray"/>
+    <origin xyz="1.5 1.0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Floor marker neg offset -->
+  <link name="floor_red">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.6 0.6 0.01"/>
+      </geometry>
+      <material name="floor3">
+        <color rgba="0.9 0.1 0.1 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="world_to_floor_red" type="fixed">
+    <parent link="world"/>
+    <child link="floor_red"/>
+    <origin xyz="-1.5 -1.0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Floor marker diagonal -->
+  <link name="floor_purple">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.8 0.8 0.01"/>
+      </geometry>
+      <material name="floor4">
+        <color rgba="0.5 0.0 0.5 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="world_to_floor_purple" type="fixed">
+    <parent link="world"/>
+    <child link="floor_purple"/>
+    <origin xyz="1.5 -1.5 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Wall marker +X -->
+  <link name="wall_x_blue">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <geometry>
+        <box size="0.6 0.6 0.01"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0.2 0.2 0.9 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="world_to_wall_x_blue" type="fixed">
+    <parent link="world"/>
+    <child link="wall_x_blue"/>
+    <origin xyz="2.5 0 1.0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Wall marker -X -->
+  <link name="wall_neg_x_red">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <geometry>
+        <box size="0.6 0.6 0.01"/>
+      </geometry>
+      <material name="red">
+        <color rgba="0.9 0.2 0.2 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="world_to_wall_neg_x_red" type="fixed">
+    <parent link="world"/>
+    <child link="wall_neg_x_red"/>
+    <origin xyz="-2.5 0 1.0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Wall marker +Y -->
+  <link name="wall_pos_y_green">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <box size="0.6 0.6 0.01"/>
+      </geometry>
+      <material name="green">
+        <color rgba="0.3 0.9 0.3 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="world_to_wall_pos_y_green" type="fixed">
+    <parent link="world"/>
+    <child link="wall_pos_y_green"/>
+    <origin xyz="0 2.5 1.0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Wall marker -Y -->
+  <link name="wall_neg_y_magenta">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <box size="0.6 0.6 0.01"/>
+      </geometry>
+      <material name="magenta">
+        <color rgba="0.8 0.2 0.8 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="world_to_wall_neg_y_magenta" type="fixed">
+    <parent link="world"/>
+    <child link="wall_neg_y_magenta"/>
+    <origin xyz="0 -2.5 1.0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Additional wall markers -->
+  <link name="wall_pos_x_high">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <geometry>
+        <box size="0.6 0.6 0.01"/>
+      </geometry>
+      <material name="cyan">
+        <color rgba="0.2 0.8 0.8 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="world_to_wall_pos_x_high" type="fixed">
+    <parent link="world"/>
+    <child link="wall_pos_x_high"/>
+    <origin xyz="2.5 1.5 1.8" rpy="0 0 0"/>
+  </joint>
+
+  <link name="wall_neg_x_high">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <geometry>
+        <box size="0.6 0.6 0.01"/>
+      </geometry>
+      <material name="purple">
+        <color rgba="0.5 0.2 0.7 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="world_to_wall_neg_x_high" type="fixed">
+    <parent link="world"/>
+    <child link="wall_neg_x_high"/>
+    <origin xyz="-2.5 -1.5 1.8" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Ceiling marker -->
+  <link name="ceiling_yellow">
+    <visual>
+      <origin xyz="0 0 0" rpy="3.14159 0 0"/>
+      <geometry>
+        <box size="0.6 0.6 0.01"/>
+      </geometry>
+      <material name="yellow">
+        <color rgba="0.9 0.9 0.2 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="world_to_ceiling" type="fixed">
+    <parent link="world"/>
+    <child link="ceiling_yellow"/>
+    <origin xyz="0 0 2.5" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Ceiling marker offset -->
+  <link name="ceiling_orange">
+    <visual>
+      <origin xyz="0 0 0" rpy="3.14159 0 0"/>
+      <geometry>
+        <box size="0.6 0.6 0.01"/>
+      </geometry>
+      <material name="orange">
+        <color rgba="0.9 0.6 0.2 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="world_to_ceiling_offset" type="fixed">
+    <parent link="world"/>
+    <child link="ceiling_orange"/>
+    <origin xyz="1.5 1.5 2.5" rpy="0 0 0"/>
+  </joint>
+</robot>

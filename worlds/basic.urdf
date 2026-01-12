@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<robot name="basic_platform">
+  <link name="platform">
+    <visual>
+      <geometry>
+        <box size="0.5 0.5 0.1"/>   
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.5 0.5 0.1"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="5"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+  </link>
+</robot>

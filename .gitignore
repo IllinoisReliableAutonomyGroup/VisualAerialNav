@@ -1,0 +1,14 @@
+__pycache__/
+.vscode/
+.devcontainer/
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.bbl
+*.blg
+*.pdf
