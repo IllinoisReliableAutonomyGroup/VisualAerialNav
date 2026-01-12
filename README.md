@@ -1,9 +1,9 @@
-# Visual Navigation for Autonomous Vehicles
+# Visual Navigation for Aerial Autonomous Vehicles (VNAAV)
 
 This repository contains  reference python implementations for visual control of quadrotors. The primary focus is a lightweight quadrotor simulator with interchangeable controllers and sensors (including a PyBullet camera), plus the supporting code for perception and navigation.
 
 Key capabilities include:
-- A small SE(3) quadrotor simulator with a three-rate loop (plant, sensor, controller).
+- A small SE(3) quadrotor simulator with a three-rate loop (plant, sensor, controller). 
 - PyBullet playback with an onboard camera and AprilTag/Aruco feature detection (PBVS controller).
 - Multiple controller modes (SE3 position, random, PBVS, smoothed PBVS) and configurable trajectories.
 - Reusable scene/camera helpers for swapping drone visuals and environments.
@@ -131,16 +131,6 @@ python -m py_labs.quadrotor_sim.run_bullet_simulation [options]
 | `--aruco_scene` | `false` | Reserved flag for ArUco scene generation (not wired in the entrypoint). |
 | `--basic_drone` | `false` | Force basic drone visual (default if `--a2rl` not set). |
 
-## Additional resources
+## References 
 
-- Simulator builds: https://drive.google.com/drive/folders/1Bwu1lw9qx_TdibhPuYPpDLbJaBEBvBRb?usp=sharing
-- ROS bags: https://github.com/MIT-SPARK/VNAV-lab-data
-- Course page: https://ocw.mit.edu/courses/16-485-visual-navigation-for-autonomous-vehicles-vnav-fall-2020/
-
-<!-- ## Licenses
-
-For licenses of the external packages, please refer to their specific repositories. -->
-
-<!-- ## Acknowledgements
-
-The development of this material was partially funded by the National Science Foundation under NSF CAREER award “Certifiable Perception for Autonomous Cyber-Physical Systems”. -->
+The plant model and the SE(3) controller are from [MIT's VNAV course](https://vnav.mit.edu/).
